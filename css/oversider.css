@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body {
+    background-color: #e39695;
+}
+
+section {
+    height: 1024px;
+    width: 1366px;
+}
+h1 {
+    font-family: 'bebas neue';
+    color: #c2241d;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 414px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+h3 {
+    font-family: 'bebas neue';
+    color: #c2241d;
+    font-size: 3rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.afslutknap {
+    position: absolute;
+    width: 142px;
+    height: 135px;
+    bottom: 0;
+    right: 0;
+}
