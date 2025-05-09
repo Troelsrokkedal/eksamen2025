@@ -22,6 +22,17 @@ article{
     font-size: 2.8rem;
 }
 
+.sendvidere{
+    font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 2.8rem;
+}
+
+.sendvidere:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
 .background {
     background-image: url("/img/baggrundsbryster.png"); 
     background-size: cover;
