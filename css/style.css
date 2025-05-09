@@ -9,14 +9,33 @@
     src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
 }
 
-body {
-    background-color: #E39695;
-}
-
 h1{
     font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 8rem;
+    padding-bottom: 2rem;
 }
 
-.containerboks{
+article{
+    font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 2.8rem;
+}
 
+.background {
+    background-image: url("/img/baggrundsbryster.png"); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content {
+    color: white;
+    border-radius: 1rem;
+    max-width: 1000px;
+    text-align: center;
 }
