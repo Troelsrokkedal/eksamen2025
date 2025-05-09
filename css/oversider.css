@@ -13,12 +13,16 @@ body {
     background-color: #e39695;
 }
 
+section {
+    height: 1024px;
+    width: 1366px;
+}
 h1 {
     font-family: 'bebas neue';
     color: #c2241d;
     font-size: 6rem;
     text-align: center;
-    margin: auto;
+    padding: auto;
 }
 
 h3 {
@@ -31,8 +35,9 @@ a {
 }
 
 img {
+    position: absolute;
     width: 142px;
     height: 135px;
-    margin-left: 1366px;
-    margin-top: 0px;
+    bottom: 0;
+    right: 0;
 }
