@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body{
+    background-color: #E39695;
+}
+
+h2{
+    font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 8rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.svarmuligheder{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.svarmulighed{
+    padding: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.svarmulighed:hover{
+    transform: scale(1.05);
+}
+
+.knappe-a{
+    background-color: #DA5552;
+}
+
+.knappe-b{
+    background-color: #DE85A3;
+}
+
+.knappe-c{
+    background-color: #E46087;
+}
+
+.knappe-d{
+    background-color: #DF7373;
+}
+
+.svar {
+    position: fixed;
+    right: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    transition: right 0.5s ease;
+  }
+
+
+
+.afslutknap {
+    position: absolute;
+    width: 142px;
+    height: 135px;
+    bottom: 0;
+    right: 0;
+}
