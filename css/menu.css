@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body {
+    background-color: #E39695;
+}
+
+h2{
+    font-family: 'bebas neue';
+    color: #C2241D;
+    display: inline-block;
+    font-size: 2.5rem;
+    padding-top: 3rem;
+    margin: 20px 70px;
+}
+
+video {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px auto; /* Centrerer videoen horisontalt og giver lidt luft under */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 a {
+    color: #C2241D;           /* Standard farve */
+    text-decoration: none;    /* Fjerner understregning */
+    transition: color 0.2s ease-in-out, font-size 0.2s ease-in-out, transform 0.2s ease-in-out;
+    display: inline-block;    /* Kræves for at transform virker korrekt */
+}
+
+h2 a:hover {
+    color: #E46087;           /* Farven ændres når musen er over */
+    font-size: 1.3em;         /* Gør teksten større */
+    transform: scale(1.1);    /* Skalerer lidt */
+}
+
