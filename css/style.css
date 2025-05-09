@@ -4,10 +4,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
 body {
     background-color: #E39695;
 }
 
+h1{
+    font-family: 'bebas neue';
+}
+
 .containerboks{
-    
+
 }
