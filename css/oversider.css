@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body {
+    background-color: #e39695;
+}
+
+h1 {
+    font-family: 'bebas neue';
+    color: #c2241d;
+    font-size: 6rem;
+    text-align: center;
+    margin: auto;
+}
+
+h3 {
+    font-family: 'bebas neue';
+    color: #c2241d;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 142px;
+    height: 135px;
+    margin-left: 1366px;
+    margin-top: 0px;
+}
