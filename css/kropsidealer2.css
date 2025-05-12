@@ -21,3 +21,32 @@ h1{
     text-align: center;
     padding-top: 6rem;
 }
+
+.billedegrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    padding: 2rem;
+}
+.billedegrid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px; 
+}
+
+.brystvortegrid img:nth-child(3),
+.brystvortegrid img:nth-child(4) {
+    margin-top: 8rem; 
+}
+
+
+
+.afslutknap {
+    position: absolute;
+    width: 142px;
+    height: 135px;
+    bottom: 0;
+    right: 0;
+}
