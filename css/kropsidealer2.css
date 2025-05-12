@@ -41,6 +41,11 @@ h1{
     margin-top: 8rem; 
 }
 
+.brystvortegrid img{
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+}
 
 .afslutknap {
     position: absolute;
