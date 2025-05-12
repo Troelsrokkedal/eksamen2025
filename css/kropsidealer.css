@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body {
+    background-color: #E39695;
+}
+.background {
+    background-image: url("/img/baggrundsbryster.png"); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1{
+    font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 8rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.afslutknap {
+    position: absolute;
+    width: 142px;
+    height: 135px;
+    bottom: 0;
+    right: 0;
+}
