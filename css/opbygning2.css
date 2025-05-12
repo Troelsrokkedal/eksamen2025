@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'bebas neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('woff');
+}
+
+body {
+    background-color: #e39695;
+    font-family: 'bebas neue', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    height: 1024px; 
+    width: 1366px; 
+    margin: auto; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 97%;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px; 
+    margin-left: 20px;
+}
+
+.button-container button {
+    background-color: #e39695;
+    border: 2px solid #c2241d;
+    color: #c2241d;
+    font-family: bebas neue;
+    font-size: 28px; 
+    padding: 20px 40px; 
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+}
+
+.button-container button:hover {
+    transform: scale(1.05);
+}
+
+.anatomibryster {
+    width: 705px;
+    height: auto;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+}
+
+.afslutknap {
+    position: absolute;
+    width: 142px;
+    height: 135px;
+    bottom: 0;
+    right: 0;
+}
