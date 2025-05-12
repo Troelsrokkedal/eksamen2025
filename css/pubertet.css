@@ -72,15 +72,20 @@ h2{
     background-color: #DF7373;
 }
 
+#resultat {
+    position: relative;
+    left: 100%; /* starter udenfor skærmen */
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  
+#resultat.show {
+    left: 0;
+    opacity: 1;
+  }
+  
 .svar {
-    position: fixed;
-    right: -300px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 200px;
-    padding: 1rem;
-    background-color: #f0f0f0;
-    transition: right 0.5s ease;
+    display: none;
   }
 
 
