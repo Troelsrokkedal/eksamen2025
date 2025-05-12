@@ -12,3 +12,12 @@
 body {
     background-color: #E39695;
 }
+
+h1{
+    font-family: 'bebas neue';
+    color: #C62D26;
+    font-size: 8rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    padding-top: 6rem;
+}
