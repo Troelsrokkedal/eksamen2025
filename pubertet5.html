@@ -8,25 +8,31 @@
 </head>
 <body>
     <section class="quiz-container">
-        <h2>I hvilket stadie begynder bryst og brystvorte at
-            løfte sig tydeligt frem fra brystvæggen?</h2>
-            <section class="svarmuligheder">
-                <button class="svarmulighed knappe-a">A) Stadie 2</button>
-                <button class="svarmulighed knappe-b">B) Stadie 4</button>
-                <button class="svarmulighed knappe-c">C) Stadie 1</button>
-                <button class="svarmulighed knappe-d">D) Stadie 5</button>
-            </section>
+        <h2>I hvilket stadie begynder bryst og brystvorte at løfte sig tydeligt frem fra brystvæggen?</h2>
+        <section class="svarmuligheder">
+            <button class="svarmulighed knappe-a">A) Stadie 2</button>
+            <button id="rigtigt-svar" class="svarmulighed knappe-b">B) Stadie 4</button>
+            <button class="svarmulighed knappe-c">C) Stadie 1</button>
+            <button class="svarmulighed knappe-d">D) Stadie 5</button>
+        </section>
     </section>
     
     <section id="resultat-overlay" class="overlay">
-        <button id="resultat" class="svar"> <span class="svar-tekst">
-            Rigtigt svar: C – Stadie 1 er førpubertet, hvor der ikke er synlig udvikling endnu.
-            Næste spørgsmål: 
-            <a href="pubertet3.html">tryk her</a>
-        </span> 
-    </button>
+        <button id="resultat" class="svar"> 
+            <span class="svar-tekst">
+                Rigtigt svar: B – I stadie 4 begynder bryst og brystvorte at løfte sig tydeligt frem fra brystvæggen.<br>
+                Næste spørgsmål: <a href="pubertet5.html">tryk her</a>
+            </span> 
+        </button>
     </section>
-    <a  href="menu.html"><img src="img/afslutknap.png" alt="afslutknap" class="afslutknap"></a>
-<script src="js/pubertet.js"></script>
+
+    <a href="menu.html">
+        <img src="img/afslutknap.png" alt="afslutknap" class="afslutknap">
+    </a>
+
+    <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+
+    <script src="js/pubertet.js"></script>
+    <script src="js/lyd.js"></script>
 </body>
 </html>

@@ -10,27 +10,31 @@
     <section class="quiz-container">
         <h2>Hvilket udsagn beskriver bedst stadie 3?</h2>
         <section class="svarmuligheder">
-            <button class="svarmulighed knappe-a">A) Brystet er vokset og har 
-                fået voksen form</button>
-            <button class="svarmulighed knappe-b">B) Bryst og areola er stadig 
-                fladt mod brystvæggen</button>
-            <button class="svarmulighed knappe-c">C) Brystet vokser yderligere uden
-                markant adskillelse mellem bryst
-                og areola</button>
+            <button class="svarmulighed knappe-a">A) Brystet er vokset og har fået voksen form</button>
+            <button class="svarmulighed knappe-b">B) Bryst og areola er stadig fladt mod brystvæggen</button>
+            <button id="rigtigt-svar" class="svarmulighed knappe-c">
+                C) Brystet vokser yderligere uden markant adskillelse mellem bryst og areola
+            </button>
             <button class="svarmulighed knappe-d">D) Mælkeproduktionen starter</button>
         </section>
     </section>
 
     <section id="resultat-overlay" class="overlay">
-        <button id="resultat" class="svar"> <span class="svar-tekst">
-            Rigtigt svar: C – Stadie 1 er førpubertet, hvor der ikke er synlig udvikling endnu.
-            Næste spørgsmål: 
-            <a href="pubertet3.html">tryk her</a>
-        </span> 
-    </button>
+        <button id="resultat" class="svar">
+            <span class="svar-tekst">
+                Rigtigt svar: C – I stadie 3 vokser brystet yderligere uden markant adskillelse mellem bryst og areola.<br>
+                Næste spørgsmål: <a href="pubertet4.html">tryk her</a>
+            </span>
+        </button>
     </section>
-   
-    <a href="menu.html"><img src="img/afslutknap.png" alt="afslutknap" class="afslutknap"></a>
-<script src="js/pubertet.js"></script>
+
+    <a href="menu.html">
+        <img src="img/afslutknap.png" alt="afslutknap" class="afslutknap">
+    </a>
+
+    <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+
+    <script src="js/pubertet.js"></script>
+    <script src="js/lyd.js"></script>
 </body>
 </html>
