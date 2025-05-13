@@ -1,23 +1,18 @@
-'user strict'
+'use strict';
 
-document.addEventListener("DOMContentLoaded", function() {
-    const overlay = document.getElementById("info-overlay");
-    const knap = document.getElementById("videreKnap");
+document.addEventListener("DOMContentLoaded", function () {
+    // Find overlay-elementet (brystet)
+    const overlay = document.getElementById("resultat");
 
-    knap.addEventListener("click", function(e) {
-        e.preventDefault(); // Forhindrer evt. link-navigation
+    // Vis overlayen (brystet) efter 30 sekunder
+    setTimeout(function () {
         overlay.classList.add("show");
+    }, 30000); // 30.000 millisekunder = 30 sekunder
 
-        // Hvis du vil have den til at forsvinde igen efter et stykke tid:
-        // setTimeout(() => {
-        //     overlay.classList.remove("show");
-        // }, 3000);
-        document.addEventListener("DOMContentLoaded", function() {
-            const overlay = document.getElementById("info-overlay");
-        
-            setTimeout(function() {
-                overlay.classList.add("show");
-            }, 30000); // 30.000 millisekunder = 30 sekunder
-        });
+    // Klik udenfor knappen lukker overlayen igen
+    overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) {
+            overlay.classList.remove("show");
+        }
     });
 });
