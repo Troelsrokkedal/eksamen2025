@@ -57,12 +57,12 @@ p {
 
 label {
     display: block;
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1.6rem;
     font-family: inherit;
     position: absolute;
     text-align: center;
     width: 400px;
+    color: #ffffff;
 }
 
 /* Behold dine positionsklasser */
