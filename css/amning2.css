@@ -55,46 +55,25 @@ p {
     position: absolute; 
 }
 
-.check1 {
-    top: 50px; 
-    left: 50px;
+label {
+    display: block;
+    font-size: 1.5rem;
+    color: black;
+    font-family: inherit;
+    position: absolute;
+    text-align: center;
+    width: 400px;
 }
 
-.check2 {
-    top: 150px; 
-    left: 500px;
-}
-
-.check3 {
-    top: 250px; 
-    left: 100px;
-}
-
-.check4 {
-    top: 350px;
-    left: 325px;
-    width: 900px;
-}
-
-.check5 {
-    top: 625px; 
-    left: 400px;
-}
-
-.check6 {
-    top: 725px;
-    left: 85px;
-}
-
-.check7 {
-    top: 825px;
-    left: 710px;
-}
-
-.check8 {
-    top: 925px;
-    left: 170px;
-}
+/* Behold dine positionsklasser */
+.check1 { top: 50px; left: 50px; }
+.check2 { top: 150px; left: 500px; }
+.check3 { top: 250px; left: 100px; }
+.check4 { top: 350px; left: 325px; width: 900px; }
+.check5 { top: 625px; left: 400px; }
+.check6 { top: 725px; left: 85px; }
+.check7 { top: 825px; left: 710px; }
+.check8 { top: 925px; left: 170px; }
 
 .afslutknap {
     position: absolute;
