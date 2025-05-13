@@ -1,18 +1,16 @@
-'user strict'
+'use strict';
 
- // Vælg alle svar-knapperne
- const svarKnapper = document.querySelectorAll('.svarmulighed');
- const resultatKnap = document.getElementById('resultat');
+const svarKnapper = document.querySelectorAll('.svarmulighed');
+const overlay = document.getElementById('resultat-overlay');
 
- // Tilføj klik-event til hver knap
- svarKnapper.forEach(knap => {
-   knap.addEventListener('click', () => {
-     // Vis knappen (fjerner display: none)
-     resultatKnap.style.display = 'block';
+svarKnapper.forEach(knap => {
+  knap.addEventListener('click', () => {
+    overlay.classList.add('show');
+  });
+});
 
-     // Lille forsinkelse, så transition kan aktiveres
-     setTimeout(() => {
-       resultatKnap.classList.add('show');
-     }, 200);
-   });
- });
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove('show');
+  }
+});
