@@ -31,6 +31,82 @@ p {
     color: #ffffff;
 }
 
+.svar {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #f4b18c;
+    color: white;
+    font-family: 'bebas neue', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 2rem;
+    border: none;
+    position: relative;
+    line-height: 1.4;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+
+.svar-tekst{
+  font-family: 'bebas neue', sans-serif;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  z-index: 2; /* sørger for at tekst er øverst */
+  position: relative;
+  padding: 2rem;
+}
+
+.svar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #de8e86; /* areola */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.svar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: #c86c6c; /* nipple */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* fade baggrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 100;
+  }
+  
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
 
 
