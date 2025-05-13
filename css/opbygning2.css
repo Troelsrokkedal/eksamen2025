@@ -51,16 +51,60 @@ section {
     width: 300px;
 }
 
-.button-container button:hover {
-    transform: scale(1.05);
-}
 
 .anatomibryster {
-    width: 705px;
+    width: 878px;
     height: auto;
     position: absolute; 
     top: 0; 
     right: 0; 
+}
+
+.red-dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#dot1 {
+    top: 557px;
+    left: 685px;
+}
+
+#dot2 {
+    top: 57px;
+    left: 1218px;
+}
+
+#dot3 {
+    top: 419px;
+    left: 993px;
+}
+
+#dot4 {
+    top: 293px;
+    left: 1099px;
+}
+
+#dot5 {
+    top: 556px;
+    left: 1275px;
+}
+
+#dot6 {
+    top: 809px;
+    left: 1118px;
+}
+
+#connectionCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none; /* Prevent interference with mouse events */
 }
 
 .afslutknap {
@@ -69,4 +113,12 @@ section {
     height: 135px;
     bottom: 0;
     right: 0;
+}
+
+.connection-line {
+  position: absolute;
+  height: 4px;
+  background-color: red;
+  transform-origin: 0 50%;
+  z-index: 10;
 }
