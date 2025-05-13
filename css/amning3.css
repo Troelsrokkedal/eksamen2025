@@ -18,15 +18,17 @@ h1 {
     font-size: 4rem;
     color: #c2241d;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50px; 
 }
 
 p {
-    font-size: 22px;
+    font-size: 25px;
     text-align: center;
     margin: 20px auto;
     max-width: 800px;
     line-height: 10;
+    font-family: 'bebas neue', sans-serif;
+    color: #ffffff;
 }
 
 
