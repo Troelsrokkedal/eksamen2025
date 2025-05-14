@@ -11,7 +11,7 @@
         <h2>Hvad sker der typisk i stadie 2?</h2>
         <section class="svarmuligheder">
             <button class="svarmulighed knappe-a">A) Brystet er fuldt udviklet</button>
-            <button id="rigtigt-svar" class="svarmulighed knappe-b">
+            <button class="svarmulighed knappe-b" data-korrekt="true">
                 B) Brystknoppen begynder at danne sig, og området hæver let
             </button>
             <button class="svarmulighed knappe-c">C) Der opstår smerter i brystet</button>
@@ -41,8 +41,10 @@
     </a>
 
     <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="lyd/forkert-svar.mp3" preload="auto"></audio>
 
     <script src="js/pubertet.js"></script>
     <script src="js/lyd.js"></script>
 </body>
 </html>
+

@@ -12,7 +12,7 @@
         <section class="svarmuligheder">
             <button class="svarmulighed knappe-a">A) Brystet har voksen form</button>
             <button class="svarmulighed knappe-b">B) Kun brystknopper er begyndt at danne sig</button>
-            <button id="rigtigt-svar" class="svarmulighed knappe-c">C) Ingen synlig brystudvikling endnu</button>
+            <button class="svarmulighed knappe-c" data-korrekt="true">C) Ingen synlig brystudvikling endnu</button>
             <button class="svarmulighed knappe-d">D) Bryst og brystvorte er tydeligt adskilt</button>
         </section>
     </section>
@@ -21,9 +21,8 @@
     <section id="resultat-overlay" class="overlay">
         <button id="resultat" class="svar">
             <span class="svar-tekst">
-                Rigtigt svar: C – Stadie 1 er førpubertet, hvor der ikke er synlig udvikling endnu.
-                Næste spørgsmål: 
-                <a href="pubertet3.html">tryk her</a>
+                Rigtigt svar: C – Stadie 1 er førpubertet, hvor der ikke er synlig udvikling endnu.<br>
+                Næste spørgsmål: <a href="pubertet3.html">tryk her</a>
             </span> 
         </button>
     </section>
@@ -41,10 +40,11 @@
         <img src="img/afslutknap.png" alt="afslutknap" class="afslutknap">
     </a>
 
-    <!-- Din lydfil -->
+    <!-- Lyd -->
     <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="lyd/forkert-svar.mp3" preload="auto"></audio>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="js/pubertet.js"></script>
     <script src="js/lyd.js"></script>
 </body>

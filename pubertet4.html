@@ -12,7 +12,7 @@
         <section class="svarmuligheder">
             <button class="svarmulighed knappe-a">A) Brystet er vokset og har fået voksen form</button>
             <button class="svarmulighed knappe-b">B) Bryst og areola er stadig fladt mod brystvæggen</button>
-            <button id="rigtigt-svar" class="svarmulighed knappe-c">
+            <button class="svarmulighed knappe-c" data-korrekt="true">
                 C) Brystet vokser yderligere uden markant adskillelse mellem bryst og areola
             </button>
             <button class="svarmulighed knappe-d">D) Mælkeproduktionen starter</button>
@@ -41,8 +41,10 @@
     </a>
 
     <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="lyd/forkert-svar.mp3" preload="auto"></audio>
 
     <script src="js/pubertet.js"></script>
     <script src="js/lyd.js"></script>
 </body>
 </html>
+
