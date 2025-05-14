@@ -27,7 +27,7 @@ h1{
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     justify-items: center;
-    padding: 2rem;
+    padding: 4rem;
 }
 .billedegrid img {
     width: 100%;
@@ -38,13 +38,14 @@ h1{
 
 .brystvortegrid img:nth-child(3),
 .brystvortegrid img:nth-child(4) {
-    margin-top: 8rem; 
+    margin-top: 4rem; 
 }
 
 .brystvortegrid img{
-    width: 40%;
+    width: 100%;
     max-width: 300px;
     height: auto;
+    padding-bottom: 6rem;
 }
 
 .afslutknap {
