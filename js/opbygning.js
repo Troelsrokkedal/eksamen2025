@@ -13,34 +13,65 @@ const correctMatches = {
   btn6: 'dot6'
 };
 
+
+const fixedStartPoints = {
+  btn1: { x: 320, y: 50 },
+  btn2: { x: 320, y: 230 },
+  btn3: { x: 320, y: 410 },
+  btn4: { x: 320, y: 590 },
+  btn5: { x: 320, y: 760 },
+  btn6: { x: 320, y: 940 }
+};
+
+const fixedEndPoints = {
+  dot1: { x: 705, y: 575},
+  dot2: { x: 1237, y: 72 },
+  dot3: { x: 1015, y: 435 },
+  dot4: { x: 1120, y: 310 },
+  dot5: { x: 1298, y: 570 },
+  dot6: { x: 1137, y: 830 }
+};
+
 const usedButtons = new Set();
 const usedDots = new Set();
 
+function getCenter(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    x: rect.left + rect.width / 2 + window.scrollX,
+    y: rect.top + rect.height / 2 + window.scrollY
+  };
+}
+
+function getButtonEdgeRight(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    x: rect.right + window.scrollX,
+    y: rect.top + rect.height / 2 + window.scrollY
+  };
+}
+
 document.querySelectorAll('.button-container button').forEach(button => {
-  button.addEventListener('mousedown', (e) => {
+  button.addEventListener('mousedown', () => {
     if (usedButtons.has(button.id)) return;
 
-    selectedButton = button;
+     selectedButton = button;
+    const start = fixedStartPoints[button.id];
 
-    // Get button position
-    const rect = button.getBoundingClientRect();
-    const startX = rect.right;
-    const startY = rect.top + rect.height / 2;
-
-    // Create the line element
     draggingLine = document.createElement('div');
     draggingLine.classList.add('connection-line');
-    draggingLine.style.top = `${startY}px`;
-    draggingLine.style.left = `${startX}px`;
+    draggingLine.style.top = `${start.y}px`;
+    draggingLine.style.left = `${start.x}px`;
     document.body.appendChild(draggingLine);
 
-    // Listen for mouse move
-    mouseMoveListener = (event) => {
-      const endX = event.clientX;
-      const endY = event.clientY;
+    mouseMoveListener = (e) => {
+      const end = {
+        x: e.pageX,
+        y: e.pageY
+      };
 
-      const dx = endX - startX;
-      const dy = endY - startY;
+      const dx = end.x - start.x;
+      const dy = end.y - start.y;
       const length = Math.sqrt(dx * dx + dy * dy);
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
@@ -52,64 +83,56 @@ document.querySelectorAll('.button-container button').forEach(button => {
   });
 });
 
-document.addEventListener('mouseup', (event) => {
+document.addEventListener('mouseup', (e) => {
   if (!draggingLine || !selectedButton) return;
 
-  const endX = event.clientX;
-  const endY = event.clientY;
+  const endPoint = {
+    x: e.pageX,
+    y: e.pageY
+  };
 
-  let droppedOnDot = null;
+  let matchedDot = null;
 
   document.querySelectorAll('.red-dot').forEach(dot => {
-    const rect = dot.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const radius = rect.width / 2;
+    const dotCenter = getCenter(dot);
+    const radius = dot.offsetWidth / 2;
 
-    const dx = endX - centerX;
-    const dy = endY - centerY;
+    const dx = endPoint.x - dotCenter.x;
+    const dy = endPoint.y - dotCenter.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < radius) {
-      droppedOnDot = dot;
+      matchedDot = dot;
     }
   });
 
   document.removeEventListener('mousemove', mouseMoveListener);
 
-  if (droppedOnDot && !usedDots.has(droppedOnDot.id)) {
-    // Recalculate final line from button to dot center
-    const buttonRect = selectedButton.getBoundingClientRect();
-    const dotRect = droppedOnDot.getBoundingClientRect();
+  if (matchedDot && !usedDots.has(matchedDot.id)) {
+    
+    const start = fixedStartPoints[selectedButton.id];
+    const end = fixedEndPoints[matchedDot.id];
 
-    const startX = buttonRect.right;
-    const startY = buttonRect.top + buttonRect.height / 2;
-    const endX = dotRect.left + dotRect.width / 2;
-    const endY = dotRect.top + dotRect.height / 2;
-
-    const dx = endX - startX;
-    const dy = endY - startY;
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
     const length = Math.sqrt(dx * dx + dy * dy);
     const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
     draggingLine.style.width = `${length}px`;
-    draggingLine.style.top = `${startY}px`;
-    draggingLine.style.left = `${startX}px`;
+    draggingLine.style.top = `${start.y}px`;
+    draggingLine.style.left = `${start.x}px`;
     draggingLine.style.transform = `rotate(${angle}deg)`;
 
-    // Color it based on correctness
-    const correct = correctMatches[selectedButton.id] === droppedOnDot.id;
+    
+    const correct = correctMatches[selectedButton.id] === matchedDot.id;
     draggingLine.style.backgroundColor = correct ? 'green' : 'red';
 
-    // Mark used
     usedButtons.add(selectedButton.id);
-    usedDots.add(droppedOnDot.id);
+    usedDots.add(matchedDot.id);
   } else {
-    // Not dropped on a valid dot — remove the line
-    draggingLine.remove();
+    draggingLine.remove(); 
   }
 
-  // Reset
   selectedButton = null;
   draggingLine = null;
 });
