@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: #E39695;
+    background-image: url('/img/baggrund-medstreger.webp');
 }
 
 h2{
@@ -84,7 +84,6 @@ h2{
     text-align: center;
     padding: 2rem;
     border: none;
-    position: relative;
     line-height: 1.4;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +97,6 @@ h2{
   color: white;
   text-align: center;
   z-index: 2; /* sørger for at tekst er øverst */
-  position: relative;
   padding: 2rem;
 }
 
@@ -144,7 +142,7 @@ h2{
     z-index: 100;
   }
   
-  .overlay.show {
+.overlay.show {
     opacity: 1;
     pointer-events: auto;
   }
@@ -160,4 +158,17 @@ a{
     height: 135px;
     bottom: 0;
     right: 0;
+}
+
+#resultat-overlay {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#resultat {
+    margin: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
 }

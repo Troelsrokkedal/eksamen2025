@@ -10,23 +10,41 @@
     <section class="quiz-container">
         <h2>Hvad sker der typisk i stadie 2?</h2>
         <section class="svarmuligheder">
-        <button class="svarmulighed knappe-a">A) Brystet er fuldt udviklet</button>
-        <button class="svarmulighed knappe-b">B) Brystknoppen begynder at 
-            danne sig, og området hæver let</button>
-        <button class="svarmulighed knappe-c">C) Der opstår smerter i brystet</button>
-        <button class="svarmulighed knappe-d">D) Brystvorten trækkes indad</button>
+            <button class="svarmulighed knappe-a">A) Brystet er fuldt udviklet</button>
+            <button class="svarmulighed knappe-b" data-korrekt="true">
+                B) Brystknoppen begynder at danne sig, og området hæver let
+            </button>
+            <button class="svarmulighed knappe-c">C) Der opstår smerter i brystet</button>
+            <button class="svarmulighed knappe-d">D) Brystvorten trækkes indad</button>
         </section>
     </section>
-   
+
     <section id="resultat-overlay" class="overlay">
-        <button id="resultat" class="svar"> <span class="svar-tekst">
-            Rigtigt svar: C – Stadie 1 er førpubertet, hvor der ikke er synlig udvikling endnu.
-            Næste spørgsmål: 
-            <a href="pubertet3.html">tryk her</a>
-        </span> 
-    </button>
+        <button id="resultat" class="svar">
+            <span class="svar-tekst">
+                Rigtigt svar: B – I stadie 2 begynder brystknoppen at danne sig, og området hæver lidt.<br>
+                Næste spørgsmål: <a href="pubertet4.html">tryk her</a>
+            </span>
+        </button>
     </section>
-    <a href="menu.html"><img src="img/afslutknap.png" alt="afslutknap" class="afslutknap"></a>
-<script src="js/pubertet.js"></script>
+
+    <section id="forkert-overlay" class="overlay">
+        <button class="svar">
+            <span class="svar-tekst">
+                Forkert svar – prøv igen!
+            </span> 
+        </button>
+    </section>
+
+    <a href="menu.html">
+        <img src="img/afslutknap.png" alt="afslutknap" class="afslutknap">
+    </a>
+
+    <audio id="correctSound" src="lyd/rigtigt-svar.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="lyd/forkert-svar.mp3" preload="auto"></audio>
+
+    <script src="js/pubertet.js"></script>
+    <script src="js/lyd.js"></script>
 </body>
 </html>
+

@@ -1,21 +1,28 @@
 'use strict';
 
 
-// Hent overlay og lyd
-const overlay = document.getElementById("resultat-overlay");
-const lyd = document.getElementById("correctSound");
+document.addEventListener("DOMContentLoaded", function () {
+    // Hent alle svarmuligheder
+    const svarmuligheder = document.querySelectorAll(".svarmulighed");
 
-// Hent alle svar-knapper
-const knapper = document.querySelectorAll(".svarmulighed");
+    // Hent lydfilene
+    const correctSound = document.getElementById("correctSound");
+    const wrongSound = document.getElementById("wrongSound");
 
-// Rigtigt svar er knappe-c
-knapper.forEach(knap => {
-    knap.addEventListener("click", () => {
-        if (knap.classList.contains("knappe-c")) {
-            lyd.play();                       // Spil lyd
-            overlay.classList.add("show");    // Vis overlay
-        } else {
-            // Gør ingenting – forkert svar ignoreres
-        }
+    // Lyt til klik på svarmulighederne
+    svarmuligheder.forEach(function (svar) {
+        svar.addEventListener("click", function () {
+            // Tjek om det er det rigtige svar (hvis data-korrekt="true")
+            if (svar.getAttribute("data-korrekt") === "true") {
+                // Afspil den rigtige lyd
+                correctSound.play();
+
+                // Vis resultatet
+                document.getElementById("resultat-overlay").style.display = "block";
+            } else {
+                // Afspil den forkerte lyd
+                wrongSound.play();
+            }
+        });
     });
 });
