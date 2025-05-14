@@ -7,14 +7,15 @@ const korrektKnap = document.getElementById('rigtigt-svar');
 
 svarKnapper.forEach(knap => {
   knap.addEventListener('click', () => {
-    if (knap === korrektKnap) {
-      overlayRigtigt.classList.add('show');
-      // Afspil lyd hvis ønsket
-      const lyd = document.getElementById('correctSound');
-      if (lyd) lyd.play();
-    } else {
-      overlayForkert.classList.add('show');
-    }
+    if (knap.dataset.korrekt === "true") {
+        overlayRigtigt.classList.add('show');
+        const lyd = document.getElementById('correctSound');
+        if (lyd) lyd.play();
+      } else {
+        overlayForkert.classList.add('show');
+        const lyd = document.getElementById('wrongSound');
+        if (lyd) lyd.play();
+      }
   });
 });
 
