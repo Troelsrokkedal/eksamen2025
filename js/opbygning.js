@@ -1,4 +1,5 @@
-'use strict';
+'use strict'; 
+
 
 // koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
 
@@ -26,8 +27,9 @@ const fixedStartPoints = {
   btn6: { x: 320, y: 940 }
 };
 
+
 const fixedEndPoints = {
-  dot1: { x: 705, y: 575},
+  dot1: { x: 705, y: 575 },
   dot2: { x: 1237, y: 72 },
   dot3: { x: 1015, y: 435 },
   dot4: { x: 1120, y: 310 },
@@ -67,16 +69,13 @@ document.querySelectorAll('.button-container button').forEach(button => {
 
     //bestemmer hvad der skal ske når musen bevæges.//
     mouseMoveListener = (e) => {
-      const end = {
-        x: e.pageX,
-        y: e.pageY
-      };
-
+      const end = { x: e.pageX, y: e.pageY };
       const dx = end.x - start.x;
       const dy = end.y - start.y;
       const length = Math.sqrt(dx * dx + dy * dy);
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
+      
       draggingLine.style.width = `${length}px`;
       draggingLine.style.transform = `rotate(${angle}deg)`;
     };
@@ -88,17 +87,12 @@ document.querySelectorAll('.button-container button').forEach(button => {
 document.addEventListener('mouseup', (e) => {
   if (!draggingLine || !selectedButton) return;
 
-  const endPoint = {
-    x: e.pageX,
-    y: e.pageY
-  };
-
+  const endPoint = { x: e.pageX, y: e.pageY };
   let matchedDot = null;
 
   document.querySelectorAll('.red-dot').forEach(dot => {
     const dotCenter = getCenter(dot);
     const radius = dot.offsetWidth / 2;
-
     const dx = endPoint.x - dotCenter.x;
     const dy = endPoint.y - dotCenter.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -108,6 +102,7 @@ document.addEventListener('mouseup', (e) => {
     }
   });
 
+ 
   document.removeEventListener('mousemove', mouseMoveListener);
 
   if (matchedDot && !usedDots.has(matchedDot.id)) {
@@ -120,6 +115,7 @@ document.addEventListener('mouseup', (e) => {
     const length = Math.sqrt(dx * dx + dy * dy);
     const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
+
     draggingLine.style.width = `${length}px`;
     draggingLine.style.top = `${start.y}px`;
     draggingLine.style.left = `${start.x}px`;
@@ -129,12 +125,15 @@ document.addEventListener('mouseup', (e) => {
     const correct = correctMatches[selectedButton.id] === matchedDot.id;
     draggingLine.style.backgroundColor = correct ? 'green' : 'red';
 
+    
     usedButtons.add(selectedButton.id);
     usedDots.add(matchedDot.id);
   } else {
-    draggingLine.remove(); 
+    
+    draggingLine.remove();
   }
 
+ 
   selectedButton = null;
   draggingLine = null;
 });

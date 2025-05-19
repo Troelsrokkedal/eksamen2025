@@ -1,26 +1,27 @@
-'use strict';
-
+'use strict'; // Gør JavaScript-strengere ved at fange fejl tidligt
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Hent alle svarmuligheder
+    // Når hele dokumentet er indlæst, køres denne funktion
+
+    // Hent alle elementer med klassen 'svarmulighed' (knapper eller lignende)
     const svarmuligheder = document.querySelectorAll(".svarmulighed");
 
-    // Hent lydfilene
+    // Hent lydfilerne til korrekt og forkert svar
     const correctSound = document.getElementById("correctSound");
     const wrongSound = document.getElementById("wrongSound");
 
-    // Lyt til klik på svarmulighederne
+    // Tilføj klik-event til hver svarmulighed
     svarmuligheder.forEach(function (svar) {
         svar.addEventListener("click", function () {
-            // Tjek om det er det rigtige svar (hvis data-korrekt="true")
+            // Tjek om svaret er korrekt via attributten 'data-korrekt'
             if (svar.getAttribute("data-korrekt") === "true") {
-                // Afspil den rigtige lyd
+                // Afspil korrekt lyd
                 correctSound.play();
 
-                // Vis resultatet
+                // Vis overlay med resultat
                 document.getElementById("resultat-overlay").style.display = "block";
             } else {
-                // Afspil den forkerte lyd
+                // Afspil forkert lyd
                 wrongSound.play();
             }
         });
