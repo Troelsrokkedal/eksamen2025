@@ -1,0 +1,3 @@
+User-agant: *
+Disallow: 
+Sitemap: /Sitemap.xml
