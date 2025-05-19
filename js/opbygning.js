@@ -104,7 +104,7 @@ document.addEventListener('mouseup', (e) => {
     }
   });
 
- //fjerner mousemove event listener og tjekker om der er fundet en prik hvis der ikke er fundet en prik, fjernes linjen.//
+ //fjerner mousemove event listener og tjekker om der er fundet en prik hvis der ikke er fundet en prik, fjernes linjen. Hvis der er fundet en prik låses linjen fast mellem knappen og prikken.//
 
   document.removeEventListener('mousemove', mouseMoveListener);
 
