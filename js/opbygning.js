@@ -1,13 +1,13 @@
 'use strict'; 
 
 
-// koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
+//koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
 
 let selectedButton = null;
 let draggingLine = null;
 let mouseMoveListener = null;
 
-// knapperne og prikkerne er defineret herunder, så de kan bruges i koden nedenfor.//
+// denne kode bestemmer hvilke knapper matcher med hvilke dots.//
 const correctMatches = {
   btn1: 'dot1',
   btn2: 'dot2',
@@ -17,7 +17,7 @@ const correctMatches = {
   btn6: 'dot6'
 };
 
-// hver knap og prik får tildelt faste kordinater hvor linjen skal starte og slutte.//
+// hver knap og prik får tildelt faste kordinater hvor linjen skal starte.//
 const fixedStartPoints = {
   btn1: { x: 320, y: 50 },
   btn2: { x: 320, y: 230 },
@@ -27,7 +27,7 @@ const fixedStartPoints = {
   btn6: { x: 320, y: 940 }
 };
 
-
+// hver dot får tildelt faste kordinater hvor linjen skal slutte.//
 const fixedEndPoints = {
   dot1: { x: 705, y: 575 },
   dot2: { x: 1237, y: 72 },
