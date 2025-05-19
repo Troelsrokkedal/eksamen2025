@@ -1,7 +1,7 @@
 'use strict'; 
 
 
-//koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
+// koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
 
 let selectedButton = null;
 let draggingLine = null;
