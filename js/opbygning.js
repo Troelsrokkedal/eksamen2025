@@ -1,9 +1,12 @@
 'use strict';
 
+// koden nedenfor holder styr på hvilken knap der er valgt og hvilken linje der er ved at blive trukket samt musens bevægelse//
+
 let selectedButton = null;
 let draggingLine = null;
 let mouseMoveListener = null;
 
+// knapperne og prikkerne er defineret herunder, så de kan bruges i koden nedenfor.//
 const correctMatches = {
   btn1: 'dot1',
   btn2: 'dot2',
@@ -13,7 +16,7 @@ const correctMatches = {
   btn6: 'dot6'
 };
 
-
+// hver knap og prik får tildelt faste kordinater hvor linjen skal starte og slutte.//
 const fixedStartPoints = {
   btn1: { x: 320, y: 50 },
   btn2: { x: 320, y: 230 },
@@ -32,9 +35,11 @@ const fixedEndPoints = {
   dot6: { x: 1137, y: 830 }
 };
 
+// holder styr på hvilke knapper og prikker der allerede er blevet brugt, så de ikke kan bruges igen.//
 const usedButtons = new Set();
 const usedDots = new Set();
 
+// finder præcise center af html siden. Window.scrollX og window.scrollY bruges til at tage højde for scrollbars og zoom.//
 function getCenter(el) {
   const rect = el.getBoundingClientRect();
   return {
@@ -43,27 +48,24 @@ function getCenter(el) {
   };
 }
 
-function getButtonEdgeRight(el) {
-  const rect = el.getBoundingClientRect();
-  return {
-    x: rect.right + window.scrollX,
-    y: rect.top + rect.height / 2 + window.scrollY
-  };
-}
-
+//Starter træklinje process når brugeren trykker på en knap. Først tjekkes der om knappen er brugt, derefter en div som er vores linje som positioneres rigtigt i forhold til kassen. Til sidst starter en mousemovelistner som opdateres som man bevæger musen.//
 document.querySelectorAll('.button-container button').forEach(button => {
   button.addEventListener('mousedown', () => {
+    //tjekker om knap allerede er brugt og stopper funktionen hvis den er.//
     if (usedButtons.has(button.id)) return;
 
+    //gemmer valgte knap og finder start punkt for knappen.//
      selectedButton = button;
     const start = fixedStartPoints[button.id];
 
+    //opretter nyt HTML element som bliver linje og styler dette element. Start punkt for venstre ende af linje//
     draggingLine = document.createElement('div');
     draggingLine.classList.add('connection-line');
     draggingLine.style.top = `${start.y}px`;
     draggingLine.style.left = `${start.x}px`;
     document.body.appendChild(draggingLine);
 
+    //bestemmer hvad der skal ske når musen bevæges.//
     mouseMoveListener = (e) => {
       const end = {
         x: e.pageX,
