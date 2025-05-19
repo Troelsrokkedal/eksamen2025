@@ -67,7 +67,7 @@ document.querySelectorAll('.button-container button').forEach(button => {
     draggingLine.style.left = `${start.x}px`;
     document.body.appendChild(draggingLine);
 
-    //bestemmer hvad der skal ske når musen bevæges.//
+    //Finder musens aktuelle position og bestemmer hvad der skal ske når musen bevæges.//
     mouseMoveListener = (e) => {
       const end = { x: e.pageX, y: e.pageY };
       const dx = end.x - start.x;
@@ -75,21 +75,23 @@ document.querySelectorAll('.button-container button').forEach(button => {
       const length = Math.sqrt(dx * dx + dy * dy);
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-      
+      //styrer linjens længde og roterer den i forhold til musens position.//
       draggingLine.style.width = `${length}px`;
       draggingLine.style.transform = `rotate(${angle}deg)`;
     };
-
+    //tilføjer mousemove event listener til dokumentet så linjen følger musen.//
     document.addEventListener('mousemove', mouseMoveListener);
   });
 });
 
 document.addEventListener('mouseup', (e) => {
+  //stopper funktionen hvis der ikke er nogen linje der bliver trukket eller ingen knap valgt.//
   if (!draggingLine || !selectedButton) return;
 
   const endPoint = { x: e.pageX, y: e.pageY };
   let matchedDot = null;
 
+  //gemmer musens position og finder center af prikkerne.//
   document.querySelectorAll('.red-dot').forEach(dot => {
     const dotCenter = getCenter(dot);
     const radius = dot.offsetWidth / 2;
@@ -102,7 +104,8 @@ document.addEventListener('mouseup', (e) => {
     }
   });
 
- 
+ //fjerner mousemove event listener og tjekker om der er fundet en prik hvis der ikke er fundet en prik, fjernes linjen.//
+
   document.removeEventListener('mousemove', mouseMoveListener);
 
   if (matchedDot && !usedDots.has(matchedDot.id)) {
@@ -121,19 +124,19 @@ document.addEventListener('mouseup', (e) => {
     draggingLine.style.left = `${start.x}px`;
     draggingLine.style.transform = `rotate(${angle}deg)`;
 
-    
+    //tjekker om knappen og prikken matcher og farver linjen grøn hvis ja eller rød hvis nej.//
     const correct = correctMatches[selectedButton.id] === matchedDot.id;
     draggingLine.style.backgroundColor = correct ? 'green' : 'red';
 
-    
+    //markerede knappen og prikken som brugt så de ikke kan bruges igen.//
     usedButtons.add(selectedButton.id);
     usedDots.add(matchedDot.id);
   } else {
-    
+    // hvis der ikke er fundet en prik, fjernes linjen og knappen nulstilles.//
     draggingLine.remove();
   }
 
- 
+  // nulstiller knappen og linjen.//
   selectedButton = null;
   draggingLine = null;
 });
